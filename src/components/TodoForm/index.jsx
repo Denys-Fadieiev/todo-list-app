@@ -1,13 +1,15 @@
 import { Formik, Form } from 'formik';
 import React from 'react';
 import Input from './Input';
+import { connect } from 'react-redux';
+import { addTodo } from '../../store/slices';
+import { TODOLIST_VALIDATION_SCHEMA } from '../../utils/validate/validationSchema';
 
-
-const TodoForm = () => {
+const TodoForm = ({createNewTodo}) => {
   const initialValues = {todoText: '',};
 
   const handleSubmit = (values, formikBag) => {
-
+    createNewTodo(values);
     formikBag.resetForm();
   };
 
@@ -15,12 +17,12 @@ const TodoForm = () => {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      validationSchema={3}
+      validationSchema={TODOLIST_VALIDATION_SCHEMA}
     >
       <Form>
         <Input
           type='text'
-          name='todotext'
+          name='todoText'
           placeholder='Add Todo'
           autoFocus
         />
@@ -28,6 +30,10 @@ const TodoForm = () => {
       </Form>
     </Formik>
   );
-}
+};
 
-export default TodoForm;
+const mapDispathToProps = dispath => ({
+  createNewTodo: text => dispath(addTodo(text)),
+});
+
+export default connect(null, mapDispathToProps)(TodoForm);
