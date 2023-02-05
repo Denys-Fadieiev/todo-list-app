@@ -1,11 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { deleteTodo, completeTodo } from '../../store/slices';
 
-const TodoList = () => {
+const TodoList = ({ todoList, remove, complete }) => {
   return (
-    <div>
-      TodoList
-    </div>
+    <ul>
+      {todoList.map(todo => (
+        <li key={todo.id}>
+          <input
+            type='checkbox'
+            checked={todo.completeTodo}
+            onChange={() => complete(todo.id)}
+          />
+          <p>{todo.todoText}</p>
+          <button onClick={() => remove(todo.id)}>
+            <AiOutlineDelete/>
+          </button>
+        </li>
+      ))}
+    </ul>
   );
-}
+};
 
-export default TodoList;
+const mapStateToProps = ({ tidoListState }) => tidoListState;
+
+const mapDispatchToProps = dispatch => ({ 
+  remove: id => dispatch(deleteTodo(id)),
+  complete: id => dispatch(completeTodo(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
