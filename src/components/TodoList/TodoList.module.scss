@@ -1,9 +1,15 @@
-.listContainer{
+@import '../../common/templates.module';
+@import '../../common/variables.module';
 
+.listContainer{
   padding: 0 20px;
   overflow: hidden;
-  // background: red;
-
+  @media screen and (min-width: 599px) {
+    padding: 0 40px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0 50px;
+  }
 }
 .item{
   position: relative;
@@ -11,12 +17,12 @@
   width: 100%;
   margin-bottom: 15px;
   padding: 25px 55px 25px 25px;
-  border: solid gray 1px;
+  border: solid $greyColor 1px;
   border-radius: 10px;
-  color: gray;
+  color: $greyColor;
 }
 .item:hover, .item:focus, .item:active{
-  border: solid rgb(70, 253, 161) 1px;
+  border: solid $mintColor 1px;
 }
 .checkbox{
   position: relative;
@@ -32,23 +38,23 @@
 .checkboxLabel{
   padding-left: 25px;
   font-size: 14px;
-  color: gray;
+  color: $greyColor;
   cursor: pointer;
 }
 .checkboxLabel::before{
   content: '';
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(70, 253, 161); 
   position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
   top: 0;
   left: 0;
   z-index: 1;
+  border-radius: 50%;
+  background-color: $mintColor; 
 }
 .checkboxInput:checked + .checkboxLabel::before{
-  background-color: red;
+  background-color: $redColor;
 }
 .checkboxInput:checked + .checkboxLabel{
   text-decoration: line-through;
@@ -61,8 +67,8 @@
   font-weight: 800;
   background: none;
   border: none;
-  color:  rgb(70, 253, 161);
+  color:  $mintColor;
 }
 .btnDel:hover{
-  color:  red;
+  color:  $redColor;
 }

@@ -1,14 +1,16 @@
+@import '../../common/templates.module';
+@import '../../common/variables.module';
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @extend %flex-col-jcsb;
   width: 800px;
   // min-height: 600px;
   margin: 128px auto;
-  background: #161a2bf6;
+  background: $darckColor;
   text-align: center;
-  color: rgb(70, 253, 161);
+  color: $mintColor;
   // box-shadow: 0px 0px 2px 1px #161a2bf6;
+
   @media screen and (max-width: 991px) {
     width: 100%;
     min-height: 100vh;
@@ -19,16 +21,20 @@
   height: 90vh;
   width: 100%;
   overflow: hidden;
+  @media screen and (min-width: 599px) {
+    height: 91vh;
+  }
+  @media screen and (min-width: 768px) {
+    height: 92vh;
+  }
 }
 .title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-jcc-aic;
   width: 100%;
   padding: 30px 0;
   font-size: 24px;
   text-transform: uppercase;
-  background: #161a2b;
+  background: $blackColor;
   @media screen and (max-width: 693px) {
     font-size: 18px;
   }

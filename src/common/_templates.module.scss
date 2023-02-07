@@ -1,0 +1,11 @@
+%flex-col-jcsb{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+%flex-jcc-aic{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

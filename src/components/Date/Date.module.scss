@@ -1,18 +1,25 @@
+@import '../../common/templates.module';
+@import '../../common/variables.module';
+
 .wrapperDate{
+  @extend %flex-jcc-aic;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   padding: 50px 0;
 }
 .time{
   width: 100%;
   font-size: 36px;
   margin-bottom: 25px;
+  @media screen and (min-width: 768px) {
+    font-size: 42px;
+  }
 }
 .date{
   width: 100%;
   font-size: 14px;
-  color: grey;
+  text-transform: capitalize;
+  color: $greyColor;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 }
