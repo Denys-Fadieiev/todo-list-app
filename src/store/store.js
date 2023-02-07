@@ -3,7 +3,7 @@ import todoListReducer from './slices/index';
 
 const store = configureStore({
   reducer: {
-    tidoListState: todoListReducer,
+    todoListState: todoListReducer,
   },
 });
 

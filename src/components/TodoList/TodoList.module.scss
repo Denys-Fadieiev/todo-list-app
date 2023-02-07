@@ -1,0 +1,68 @@
+.listContainer{
+
+  padding: 0 20px;
+  overflow: hidden;
+  // background: red;
+
+}
+.item{
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 25px 55px 25px 25px;
+  border: solid gray 1px;
+  border-radius: 10px;
+  color: gray;
+}
+.item:hover, .item:focus, .item:active{
+  border: solid rgb(70, 253, 161) 1px;
+}
+.checkbox{
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.checkboxInput{
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.checkboxLabel{
+  padding-left: 25px;
+  font-size: 14px;
+  color: gray;
+  cursor: pointer;
+}
+.checkboxLabel::before{
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(70, 253, 161); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.checkboxInput:checked + .checkboxLabel::before{
+  background-color: red;
+}
+.checkboxInput:checked + .checkboxLabel{
+  text-decoration: line-through;
+}
+.btnDel{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  font-weight: 800;
+  background: none;
+  border: none;
+  color:  rgb(70, 253, 161);
+}
+.btnDel:hover{
+  color:  red;
+}
