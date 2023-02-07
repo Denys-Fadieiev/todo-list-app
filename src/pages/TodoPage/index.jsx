@@ -1,15 +1,22 @@
-import React from 'react';
-import TodoForm from '../../components/TodoForm';
-import TodoList from '../../components/TodoList';
+import React from "react";
+import DateTodoList from "../../components/Date";
+import TodoForm from "../../components/TodoForm";
+import TodoList from "../../components/TodoList";
+import styles from "./TodoPage.module.scss";
 
-function TodoPage () {
-  return (
-    <section>
-      <h2>just to do it</h2>
-      <TodoForm/>
-      <TodoList/>
-    </section>
-  );
+const { container, title, wrapper } = styles;
+
+function TodoPage() {
+	return (
+		<section className={container}>
+			<div className={wrapper}>
+				<h2 className={title}>just to do it</h2>
+				<DateTodoList />
+				<TodoList />
+			</div>
+			<TodoForm />
+		</section>
+	);
 }
 
 export default TodoPage;
