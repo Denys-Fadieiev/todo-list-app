@@ -4,17 +4,18 @@
 .container {
   @extend %flex-col-jcsb;
   width: 800px;
-  // min-height: 600px;
-  margin: 128px auto;
+  max-height: 850px;
+  margin: 50px auto 0;
   background: $darckColor;
   text-align: center;
   color: $mintColor;
-  // box-shadow: 0px 0px 2px 1px #161a2bf6;
-
   @media screen and (max-width: 991px) {
     width: 100%;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: 0;
+  }
+  @media screen and (min-width: 991px) {
+    height: 850px;
   }
 }
 .wrapper{
@@ -26,6 +27,9 @@
   }
   @media screen and (min-width: 768px) {
     height: 92vh;
+  }
+  @media screen and (min-width: 991px) {
+    height: 92%;
   }
 }
 .title{
